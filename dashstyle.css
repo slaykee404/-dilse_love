@@ -1,0 +1,173 @@
+
+
+/* fonts already loaded in HTML */
+:root{
+  --bg: #fff;                 /* page card white */
+  --page-pink: #fff3f4;       /* very light pink background */
+  --soft-pink: #fde9ec;       /* subtle tone */
+  --main-rose: #b86b73;       /* deep rose used for big square & accents */
+  --muted-dark: #222;         /* text */
+  --shadow-dark: rgba(0,0,0,0.28);
+  --card-shadow: rgba(0,0,0,0.18);
+}
+
+/* Global reset & body */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--page-pink);
+  color:var(--muted-dark);
+  font-family: "Playfair Display", serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 36px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  background:var(--page-pink);
+}
+.logo{font-size:28px;letter-spacing:2px}
+.logo .accent{color:var(--main-rose);font-weight:600}
+.nav-right a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--muted-dark);
+  font-size:15px;
+}
+
+/* LAYOUT GRID */
+.dashboard-wrap{
+  display:grid;
+  grid-template-columns: 1fr 380px;
+  gap:28px;
+  padding:18px 28px 60px;
+  align-items:start;
+}
+
+/* LEFT COLUMN */
+.left-col{padding:10px}
+
+/* benefits row (top) */
+.benefits{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  padding:10px 6px;
+  margin-bottom:12px;
+}
+.benefit{
+  flex:1;
+  background:var(--soft-pink);
+  border-left:4px solid rgba(0,0,0,0.06);
+  padding:14px;
+  text-align:left;
+  border-radius:4px;
+  font-size:13px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.benefit span{display:inline-block;font-family:'Playfair Display';font-size:13px}
+
+/* big rounded square on left */
+.big-square{
+  width:220px;
+  height:220px;
+  border-radius:34px;
+  background:var(--main-rose);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:14px 14px 0 rgba(0,0,0,0.28);
+  margin:36px 0 24px;
+}
+.big-square-text{
+  color:#fff;
+  font-family:'Dancing Script', cursive;
+  font-size:36px;
+  text-align:center;
+  line-height:1.05;
+}
+.big-square .heart{font-size:22px;display:block;margin-top:6px}
+
+/* pill buttons */
+.pills{display:flex;flex-direction:column;gap:26px;margin-top:6px}
+.pill{
+  width:420px;
+  max-width:93%;
+  background:var(--page-pink);
+  border-radius:40px;
+  padding:18px 28px;
+  font-family:'Dancing Script',cursive;
+  font-size:28px;
+  border: none;
+  text-align:left;
+  box-shadow:10px 10px 0 rgba(0,0,0,0.16);
+  cursor:pointer;
+}
+.pill .pill-text{padding-left:18px}
+
+/* RIGHT COLUMN */
+.right-col{display:flex;flex-direction:column;gap:18px;align-items:center;padding-top:10px}
+.card{background:var(--bg);border-radius:14px;padding:12px}
+
+/* illustration area */
+.illustration{
+  width:320px;
+  height:240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  box-shadow:8px 8px 0 rgba(0,0,0,0.12);
+  border-radius:12px;
+}
+.illustration img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* welcome block */
+.welcome{width:320px;text-align:left;padding:6px 12px}
+.welcome h2{
+  font-size:34px;
+  margin:8px 0;
+  letter-spacing:1px;
+}
+.welcome .user{color:var(--main-rose)}
+.welcome .user-icon{font-size:22px;margin-left:8px;color:transparent; border:2px solid var(--muted-dark); padding:4px;border-radius:50%}
+.age{font-size:16px;margin-top:6px;color:rgba(0,0,0,0.6)}
+
+/* bottom squares */
+.bottom-squares{display:flex;gap:18px;margin-top:6px}
+.sq{width:150px;height:150px;border-radius:18px;box-shadow:8px 8px 0 rgba(0,0,0,0.12)}
+.sq-1{background:#a86b6f}
+.sq-2{background:#e37b7f}
+
+/* responsiveness */
+@media (max-width:1000px){
+  .dashboard-wrap{grid-template-columns:1fr 320px;padding:14px;gap:20px}
+  .pill{width:90%}
+  .big-square{width:200px;height:200px;border-radius:28px}
+  .illustration{width:300px;height:200px}
+  .welcome h2{font-size:28px}
+  .sq{width:130px;height:130px}
+}
+
+@media (max-width:700px){
+  .dashboard-wrap{grid-template-columns:1fr; padding:12px}
+  .right-col{align-items:stretch}
+  .illustration,.welcome{width:100%}
+  .pills{align-items:center}
+  .pill{width:92%}
+  .big-square{margin:20px auto}
+  .bottom-squares{justify-content:center}
+}

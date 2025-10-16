@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DIL SE — Dashboard</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="dashstyle.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-left">
+      <div class="logo">DIL <span class="accent">SE</span></div>
+    </div>
+    <nav class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="match.html">Find Match</a>
+      <a href="chat.html">Chat</a>
+      <a href="login.html">Log out</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-wrap">
+    <section class="left-col">
+      <!-- top benefits strip -->
+      <div class="benefits">
+        <div class="benefit">📩<span>Genuine<br>Connections</span></div>
+        <div class="benefit">🔒<span>Safe &<br>Private</span></div>
+        <div class="benefit">🌐<span>Meet Like-<br>minded People</span></div>
+        <div class="benefit">🕊️<span>Simple &<br>Honest</span></div>
+      </div>
+
+      <!-- big rounded square -->
+      <div class="big-square card">
+        <div class="big-square-text">findyour<br><span class="heart">match ♥</span></div>
+      </div>
+
+      <!-- pill buttons -->
+      <div class="pills">
+        <button class="pill card"><span class="pill-text">your interests ♥</span></button>
+        <button class="pill card"><span class="pill-text">chats ♥</span></button>
+      </div>
+    </section>
+
+    <aside class="right-col">
+      <!-- placeholder illustration -->
+      <div class="illustration card">
+        <!-- Replace the src below with your actual image file (e.g. images/dashboard-art.png) -->
+        <img src="https://via.placeholder.com/320x220/fff0f2/ffd6dd?text=illustration" alt="illustration placeholder" id="dash-art">
+      </div>
+
+      <!-- welcome block -->
+      <div class="welcome">
+        <h2>WELCOME <span class="user">USER</span> <span class="user-icon">◯</span></h2>
+        <p class="age">Age: <strong><!-- JSP: ${user.age} --></strong></p>
+      </div>
+
+      <!-- bottom color squares -->
+      <div class="bottom-squares">
+        <div class="sq card sq-1"></div>
+        <div class="sq card sq-2"></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
