@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | DIL SE 💖</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    :root {
+      --main-pink: #ffb6c1;
+      --light-pink: #ffe6eb;
+      --text-color: #333;
+      --white: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--light-pink), var(--main-pink));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(255, 182, 193, 0.4);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .login-card:hover {
+      transform: scale(1.02);
+    }
+
+    .login-card h2 {
+      color: var(--text-color);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-card form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-card input,
+    .login-card select {
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--main-pink);
+      outline: none;
+      transition: 0.2s;
+    }
+
+    .login-card input:focus,
+    .login-card select:focus {
+      border-color: #ff9aa2;
+      box-shadow: 0 0 6px rgba(255, 182, 193, 0.5);
+    }
+
+    .login-card button {
+      background: var(--main-pink);
+      color: var(--white);
+      padding: 0.9rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .login-card button:hover {
+      background: #ff9aa2;
+      transform: translateY(-2px);
+    }
+
+    .login-card p {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      margin-top: 1rem;
+    }
+
+    .login-card a {
+      color: #ff7b9c;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .login-card a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 500px) {
+      .login-card {
+        margin: 0 1rem;
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <h2>Create Your Account 💕</h2>
+
+    <form id="signupForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+
+      <select name="gender" required>
+        <option value="" disabled selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+
+      <button type="submit">Sign Up</button>
+      <p>Already have an account? <a href="login.html">Log in</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function(e) {
+      const password = this.password.value.trim();
+      const confirmPassword = this.confirmPassword.value.trim();
+
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        alert("Passwords do not match ");
+        return false;
+      }
+
+      alert("Sign up successful!  (Backend will handle data saving)");
+    });
+  </script>
+</body>
+</html>
