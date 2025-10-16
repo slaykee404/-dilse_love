@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Chat — DIL SE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">CHAT <span class="accent">WITH ME</span></div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <main class="chat-page">
+    <section class="chat-list">
+      <!-- Repeat chat items. Replace with server-side loop in JSP -->
+      <div class="chat-item" data-name="Aisha">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted)">👤</div>
+          <div>
+            <div class="name">Aisha</div>
+            <div style="color:var(--muted);font-size:13px">Hey, how are you?</div>
+          </div>
+        </div>
+        <div class="like-btn" style="font-size:18px;cursor:pointer">♡</div>
+      </div>
+
+      <div class="chat-item" data-name="Rohan">
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--muted)">👤</div>
+          <div>
+            <div class="name">Rohan</div>
+            <div style="color:var(--muted);font-size:13px">Sent a photo</div>
+          </div>
+        </div>
+        <div class="like-btn" style="font-size:18px;cursor:pointer">♡</div>
+      </div>
+
+      <!-- Add more items -->
+    </section>
+
+    <aside class="chat-right">
+      <div style="text-align:center">
+        <img src="https://via.placeholder.com/200x140/fde9ee/ffb6c1?text=map+icons" alt="">
+        <p style="margin-top:12px;color:var(--muted)">Nearby people shown here</p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

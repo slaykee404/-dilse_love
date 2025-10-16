@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login — DIL SE</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">DIL <span class="accent">SE</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+    </div>
+  </header>
+
+  <main class="login-wrap">
+    <div class="login-box card">
+      <h2>USER LOGIN <span style="font-family:'Dancing Script';font-size:22px;">✧</span></h2>
+
+      <!-- If using JSP, rename file to login.jsp and set action to your servlet -->
+      <form id="loginForm" action="/login" method="post">
+        <!-- JSP: Replace with value from backend: value="${user.email}" -->
+        <div class="input">
+          <span>♡</span>
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="input">
+          <span>♡</span>
+          <input type="password" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="call-btn" style="width:100%;margin-top:8px">Log In</button>
+      </form>
+
+      <div class="small"><a href="#" style="color:inherit;text-decoration:underline;">Forgot Password?</a></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

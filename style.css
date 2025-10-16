@@ -1,0 +1,224 @@
+/* style.css - shared across pages */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script&family=Montserrat:wght@300;500&display=swap');
+
+:root{
+  --bg: #fff7f8;
+  --light: #fde9ec;
+  --blush: #f5b7bd;
+  --mauve: #b86b73;
+  --accent: #f2c6c9;
+  --text: #1b1b1b;
+  --muted: #8b8b8b;
+  --card-shadow: rgba(0,0,0,0.12);
+}
+
+/* Global */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Montserrat', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 32px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+  background:white;
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  letter-spacing:2px;
+}
+.logo .accent{color:var(--blush)}
+.nav-links a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+
+/* Hero (home) */
+.hero{
+  padding:36px 24px;
+  text-align:center;
+  position:relative;
+}
+.hero .tag{
+  font-family:'Dancing Script',cursive;
+  font-size:46px;
+  color:var(--text);
+  margin-bottom:24px;
+}
+.hero .illustration{
+  max-width:920px;
+  margin:0 auto 12px;
+}
+.call-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-top:18px;
+}
+.call-btn{
+  background:var(--accent);
+  padding:22px 40px;
+  border-radius:6px;
+  font-size:18px;
+  border:1px solid rgba(0,0,0,0.06);
+  cursor:pointer;
+  min-width:180px;
+}
+.call-btn:hover{transform:translateY(-4px);transition:0.25s}
+
+/* card style used on multiple pages */
+.card{
+  background:var(--light);
+  border-radius:6px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.12);
+}
+
+/* Login page */
+.login-wrap{
+  min-height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.login-box{
+  width:360px;
+  padding:42px;
+  background:var(--blush);
+  border-radius:6px;
+  box-shadow:16px 16px 0 rgba(0,0,0,0.16);
+  position:relative;
+}
+.login-box h2{
+  font-family:'Playfair Display',serif;
+  text-align:center;
+  margin:0 0 22px;
+  font-size:36px;
+}
+.input{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:rgba(255,255,255,0.9);
+  padding:12px 14px;
+  border-radius:8px;
+  margin-bottom:14px;
+}
+.input input{
+  border:0;
+  outline:none;
+  background:transparent;
+  flex:1;
+  font-size:16px;
+  color:var(--text);
+}
+.small{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* Dashboard / Profile layout */
+.container{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:28px;
+  padding:28px;
+  align-items:start;
+}
+.side-card{
+  padding:18px;
+  border-radius:8px;
+  background:linear-gradient(180deg,var(--light),#fff);
+}
+.menu-row{
+  display:flex;
+  gap:12px;
+  margin-bottom:20px;
+}
+.menu-item{
+  flex:1;
+  padding:26px;
+  text-align:center;
+  border-radius:20px;
+  background:var(--accent);
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.12);
+  cursor:pointer;
+  font-family:'Dancing Script',cursive;
+}
+
+/* Profile right column */
+.profile{
+  text-align:center;
+}
+.profile .avatar{
+  width:150px;height:150px;border-radius:12px;background:linear-gradient(90deg,#f6e9ea,#ffdfe2);
+  display:inline-flex;align-items:center;justify-content:center;font-size:64px;color:#b86b73;
+  margin-bottom:12px;
+}
+
+/* Chat page */
+.chat-page{
+  display:flex;
+  min-height:72vh;
+}
+.chat-list{
+  flex:1;
+  border-right:1px solid rgba(0,0,0,0.06);
+}
+.chat-item{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(0,0,0,0.04);
+}
+.chat-item .name{font-weight:500}
+.chat-right{
+  width:360px;
+  background:var(--light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Match / Swipe page */
+.match-hero{padding:32px; text-align:center}
+.card-row{
+  display:flex;
+  gap:24px;
+  justify-content:center;
+  align-items:end;
+  padding:28px;
+  overflow:hidden;
+}
+.match-card{
+  width:220px;height:260px;border-radius:16px;background:var(--accent);
+  box-shadow:4px 6px 0 rgba(0,0,0,0.08);
+  display:flex;align-items:center;justify-content:center;font-size:72px;color:#c07;
+  transform-origin:center bottom;
+  transition:transform .28s ease, box-shadow .2s ease;
+}
+.match-card.active{transform:scale(1.08) translateY(-8px); box-shadow:12px 16px 0 rgba(0,0,0,0.12)}
+.match-actions{margin-top:14px}
+
+/* Small screens */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr;padding:18px}
+  .logo{font-size:26px}
+  .hero .tag{font-size:34px}
+  .match-card{width:160px;height:200px;font-size:56px}
+  .login-box{width:320px;padding:28px}
+  .navbar{padding:12px 18px}
+}
+@media (max-width:480px){
+  .nav-links{display:none}
+  .logo{font-size:22px}
+  .call-btn{padding:14px 18px;font-size:15px}
+  .hero .tag{font-size:28px}
+}
