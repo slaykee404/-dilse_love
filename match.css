@@ -1,0 +1,138 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #ff6b81;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: 0.3s;
+}
+.navbar nav a:hover, .navbar nav .active {
+  text-decoration: underline;
+}
+
+/* Match Section */
+.match-section {
+  text-align: center;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card h2 {
+  margin-top: 10px;
+  color: #ff6b81;
+}
+
+.card p {
+  margin: 10px;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+button {
+  font-size: 2rem;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+  }
+  .card-container {
+    height: 420px;
+  }
+  button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
