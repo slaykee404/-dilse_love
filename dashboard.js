@@ -8,6 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.currentUser) {
     userSpan.textContent = window.currentUser;
   }
+  // Inside your script.js or similar file
+document.getElementById('signup-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Stop the default form submission
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // 1. Send an HTTP POST request to the API endpoint
+    fetch('/api/signup', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: username, password: password }),
+    })
+    // 2. Process the response from the Java backend
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Signup successful:', data);
+        window.location.href = '/dashboard.html'; // Redirect on success
+    })
+    .catch(error => {
+        console.error('Error during signup:', error);
+        alert('Signup failed.');
+    });
+});
 
   // placeholder: change illustration if you want to preview a local file
   // Example: document.getElementById('dash-art').src = 'images/dashboard-art.png';
@@ -22,4 +53,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   tweakShadows();
   window.addEventListener('resize', tweakShadows);
+
 });
